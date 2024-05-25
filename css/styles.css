@@ -1,0 +1,68 @@
+@font-face {
+  font-family: 'Red Hat Display';
+  src: url('../assets/fonts/RedHatDisplay-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 100 900;
+}
+
+:root {
+  /* Primary Colors */
+  --color-primary: hsl(192, 37%, 48%);
+  --color-primary-alpha: hsl(192, 37%, 48%, 0.9);
+  --color-primary-hover: hsl(192, 54%, 64%);
+  --color-secondary: hsl(268, 34%, 53%);
+  --color-secondary-hover: hsl(268, 100%, 86%);
+
+  /* Neutral Colors */
+  --color-text-dark: hsl(240, 21%, 20%);
+  --color-text-light: hsl(240, 10%, 57%);
+  --color-white: #fff;
+
+  /* Font Family */
+  --ff-primary: 'Red Hat Display', sans-serif;
+
+  /* Font Size */
+  --fs-64: 4rem;
+  --fs-48: 3rem;
+  --fs-40: 2.5rem;
+  --fs-32: 2rem;
+  --fs-24: 1.5rem;
+  --fs-18: 1.125rem;
+  --fs-16: 1rem;
+  --fs-14: 0.875rem;
+  --fs-12: 0.75rem;
+  /* Font Weights */
+  --fw-900: 900;
+  --fw-800: 800;
+  --fw-700: 700;
+  --fw-600: 600;
+  --fw-500: 500;
+  --fw-400: 400;
+  --fw-300: 300;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: var(--fs-16);
+  font-weight: var(--fw-500);
+}
+
+.visually-hidden {
+  border: 0 !important;
+  clip: rect(1px, 1px, 1px, 1px) !important;
+  -webkit-clip-path: inset(50%) !important;
+  clip-path: inset(50%) !important;
+  height: 1px !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+  position: absolute !important;
+  width: 1px !important;
+  white-space: nowrap !important;
+}
