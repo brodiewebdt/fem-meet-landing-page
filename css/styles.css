@@ -351,6 +351,11 @@ footer {
 }
 
 @media (min-width: 48em) {
+  footer {
+    background: linear-gradient(var(--color-primary-alpha), var(--color-primary-alpha)), url(../assets/images/tablet/image-footer.jpg);
+    background-size: cover;
+  }
+
   .footer__content {
     display: flex;
     flex-direction: column;
@@ -358,7 +363,12 @@ footer {
   }
 }
 
-@media (min-width: 64) {
+@media (min-width: 64em) {
+  footer {
+    background: linear-gradient(var(--color-primary-alpha), var(--color-primary-alpha)), url(../assets/images/desktop/image-footer.jpg);
+    background-size: cover;
+  }
+
   .footer__content {
     display: grid;
     grid-auto-columns: 1fr;
