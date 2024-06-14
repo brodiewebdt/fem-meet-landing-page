@@ -7,16 +7,19 @@
 
 :root {
   /* Primary Colors */
-  --color-primary: hsl(192, 37%, 48%);
+  --color-primary: hsl(192, 37%, 39%);
   --color-primary-alpha: hsl(192, 37%, 48%, 0.9);
   --color-primary-hover: hsl(192, 54%, 64%);
   --color-secondary: hsl(268, 34%, 53%);
   --color-secondary-hover: hsl(268, 100%, 86%);
+  --color-primary-accent: hsl(192, 90%, 77%);
+  --color-secondary-accent: hsl(268, 100%, 86%);
 
   /* Neutral Colors */
   --color-text-dark: hsl(240, 21%, 20%);
-  --color-text-light: hsl(240, 10%, 57%);
-  --color-white: #fff;
+  --color-text-light: hsl(240, 10%, 50%);
+  --color-white: hsl(0, 0%, 100%);
+  --color-light-bg: hsl(0, 0%, 98%);
 
   /* Font Family */
   --ff-primary: 'Red Hat Display', sans-serif;
@@ -45,12 +48,16 @@
 *::before,
 *::after {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
+  background-color: var(--color-light-bg);
   font-family: var(--ff-primary);
   font-size: var(--fs-16);
   font-weight: var(--fw-500);
+  line-height: 1.625;
 }
 
 .visually-hidden {
@@ -65,4 +72,301 @@ body {
   position: absolute !important;
   width: 1px !important;
   white-space: nowrap !important;
+}
+
+/*********** Typography Styles  *********/
+h1 {
+  font-size: 2.5rem;
+  font-weight: var(--fw-900);
+  line-height: 1.1;
+  margin-block: 3rem 1.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: var(--fw-900);
+  line-height: 1.125;
+  margin-block-end: 2rem;
+}
+
+p {
+  margin-block-end: 2rem;
+}
+
+@media (min-width: 48em) {
+  h1 {
+    font-size: 3rem;
+    line-height: 1;
+    margin-block: 4.5rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    line-height: 1.1;
+  }
+}
+
+@media (min-width: 64em) {
+  h1 {
+    margin-block: 3rem 2rem;
+  }
+}
+
+@media (min-width: 85.375em) {
+  h1 {
+    font-size: 4rem;
+  }
+}
+
+/*********** Button Styles  *********/
+.btn {
+  display: inline-block;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  color: var(--color-white);
+  cursor: pointer;
+  font-weight: 900;
+  padding: 1rem 2.5rem;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn-primary:focus,
+.btn-secondary:focus {
+  outline-offset: 5px;
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  padding: 1rem 1.875rem;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-white);
+  color: var(--color-secondary);
+}
+
+.hero__btn-holder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-block-end: 4rem;
+}
+
+@media (min-width: 37.5em) {
+  .hero__btn-holder {
+    flex-direction: row;
+    margin-block-end: 5rem;
+  }
+}
+
+/*********** Header Styles  *********/
+header {
+  text-align: center;
+  margin-block-end: 3.375rem;
+  padding-block-start: 3rem;
+}
+
+header img {
+  display: inline-block;
+}
+
+@media (min-width: 48em) {
+  header {
+    margin-block-end: 4rem;
+  }
+}
+
+@media (min-width: 64em) {
+  header {
+    padding-block-start: 5rem;
+  }
+}
+
+/*********** Hero Styles  *********/
+.hero-grid {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-template-areas:
+    'left right'
+    'center center';
+  gap: 1rem;
+
+  overflow: hidden;
+}
+
+.left-image {
+  grid-area: left;
+  display: block;
+  margin-left: auto;
+}
+
+.hero__content {
+  grid-area: center;
+  align-self: center;
+  max-width: 600px;
+
+  margin: auto;
+  padding-inline: 1rem;
+  text-align: center;
+}
+
+.right-image {
+  grid-area: right;
+  display: block;
+}
+
+@media (min-width: 80em) {
+  .hero-grid {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas: 'left center right';
+    gap: 1rem;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+}
+
+/*********** Pagination Styles  *********/
+.pagination {
+  text-align: center;
+}
+
+.vertical-line {
+  display: flex;
+  justify-content: center;
+}
+
+.pagination-1 {
+  margin-bottom: 4rem;
+}
+
+.pagination span {
+  background-color: var(--color-white);
+  display: inline-block;
+  border: 1px solid var(--color-text-light);
+  border: 1px solid #d8d8d8;
+  border-radius: 50%;
+  color: var(--color-text-light);
+  font-weight: var(--fw-900);
+  padding: 0.875rem 1rem;
+}
+
+hr {
+  background-color: #d8d8d8;
+  border: none;
+  display: inline-block;
+}
+
+/*********** Features Styles  *********/
+
+.features-grid {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+
+  margin-block: 4rem 5rem;
+  margin-inline: auto;
+  max-width: 69.375rem;
+  padding-inline: 1.5rem;
+}
+
+.features-grid img {
+  border-radius: 0.5rem;
+}
+
+.features__info {
+  margin-inline: auto;
+  max-width: 48ch;
+}
+
+.features__text {
+  margin: 0 auto 4rem;
+}
+
+.features__info {
+  text-align: center;
+}
+
+.features__ribbon {
+  color: var(--color-primary);
+  font-weight: var(--fw-900);
+  letter-spacing: 4px;
+  line-height: 26px;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+@media (min-width: 48em) {
+  .features-grid {
+    grid-template-columns: repeat(4, 1fr);
+    padding-inline: 2.5rem;
+  }
+}
+
+/*********** Footer Styles  *********/
+footer {
+  background: linear-gradient(var(--color-primary-alpha), var(--color-primary-alpha)), url(../assets/images/mobile/image-footer.jpg);
+  background-size: cover;
+  color: var(--color-white);
+  margin-top: -2rem;
+  padding: 5.75rem 1.5rem 4rem;
+  text-align: center;
+}
+
+.footer__heading {
+  font-size: 2rem;
+  line-height: 36px;
+  margin-block-end: 1.5rem;
+}
+.footer__info {
+  font-size: 1.125rem;
+  margin-block-end: 2rem;
+  max-width: 47ch;
+  margin-inline: auto;
+}
+
+.footer-btn {
+  background-color: var(--color-secondary);
+  display: inline-block;
+  margin-block-end: 0;
+}
+
+.footer-btn span {
+  color: hsl(268, 100%, 86%);
+}
+
+@media (min-width: 48em) {
+  .footer__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (min-width: 64) {
+  .footer__content {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .footer__heading,
+  .footer__info {
+    margin-block-end: 0;
+  }
 }
